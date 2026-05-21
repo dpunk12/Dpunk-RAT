@@ -1,50 +1,98 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/vxaboveground/Overlord/refs/heads/main/Overlord-Server/public/assets/overlord.png" alt="Overlord" width="280" />
-</p>
+```
+██████╗ ██████╗ ██╗   ██╗███╗   ██╗██╗  ██╗    ██████╗  █████╗ ████████╗
+██╔══██╗██╔══██╗██║   ██║████╗  ██║██║ ██╔╝    ██╔══██╗██╔══██╗╚══██╔══╝
+██║  ██║██████╔╝██║   ██║██╔██╗ ██║█████╔╝     ██████╔╝███████║   ██║   
+██║  ██║██╔═══╝ ██║   ██║██║╚██╗██║██╔═██╗     ██╔══██╗██╔══██║   ██║   
+██████╔╝██║     ╚██████╔╝██║ ╚████║██║  ██╗    ██║  ██║██║  ██║   ██║   
+╚═════╝ ╚═╝      ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝    ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   
+                                                                          
+⚡ REMOTE ADMINISTRATION TOOL | ENTERPRISE-GRADE AGENT MANAGEMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
 
-# Overlord
+# 🔐 DPUNK RAT
 
-# [TELEGRAM SERVER JOIN NOW NO EXCUSES WE GIVE SUPPORT AND IT'S FUN](https://t.me/WindowsBatch)
-
-Hello, I made this project for fun.
-
-The server is TypeScript on Node/Bun. The client is Go. Operators talk to the server through a web panel or the Electron desktop app, and agents connect over encrypted WebSockets.
-
-Docker is the easiest way to run it.
-
----
-
-- [Quick Start (Docker)](#quick-start-docker)
-  - [Windows](#windows)
-  - [Linux](#linux)
-  - [macOS](#macos)
-- [No Docker (.bat / .sh)](#no-docker-bat--sh)
-- [Production Package Scripts](#production-package-scripts)
-- [WebRTC Streaming](#webrtc-streaming)
-- [Docker Notes (TLS, reverse proxy, cache)](#docker-notes-tls-reverse-proxy-cache)
+> **D**istributed **Punk** Remote Administration Tool — A high-performance, TypeScript-based Remote Administration framework for enterprise operations.
 
 ---
 
-## Quick Start (Docker)
+## ✨ Features at a Glance
 
-Pick your OS below. Each section is self-contained: install Docker, get the project, start it.
-
-> Windows and macOS use `docker-compose.windows.yml`. Linux uses the default `docker-compose.yml` (host networking).
-
-After the first start, open `https://localhost:5173`. Default login is `admin` / `admin` unless you set `OVERLORD_USER` / `OVERLORD_PASS`. First startup writes generated secrets to `data/save.json` (inside the container: `/app/data/save.json`) — keep that file private and back it up.
+- **🚀 Blazing Fast** — TypeScript/Node.js server, Go agents, encrypted WebSocket comms
+- **🎮 Dual Interface** — Web panel + native Electron/Tauri desktop application
+- **🔒 End-to-End Encrypted** — Military-grade encryption for all agent communications
+- **🌐 WebRTC Streaming** — Low-latency remote desktop with multiple transport options
+- **🔌 Plugin System** — Native Go plugins for custom modules and extensions
+- **📊 Multi-Agent Management** — Manage thousands of agents from a single dashboard
+- **🐳 Docker Ready** — One-command deployment across Windows, Linux, and macOS
+- **🔄 Real-Time Updates** — Live agent metrics, command execution, and event streaming
 
 ---
+
+## 🏗️ Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    DPUNK RAT ECOSYSTEM                          │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ┌──────────────────┐         ┌──────────────────────────────┐ │
+│  │  Web Dashboard   │         │  Desktop Application         │ │
+│  │  (React/Vue)     │◄────────┤  (Tauri/Electron)          │ │
+│  └──────────────────┘         └──────────────────────────────┘ │
+│           │                              │                      │
+│           └──────────────┬───────────────┘                      │
+│                          │                                      │
+│                   ┌──────▼──────┐                              │
+│                   │ DPUNK Server │ (TypeScript/Node.js)        │
+│                   │  (Bun/Node)  │                              │
+│                   └──────┬──────┘                              │
+│                          │                                      │
+│         ┌────────────────┼────────────────┐                    │
+│         │                │                │                    │
+│    ┌────▼────┐      ┌────▼────┐     ┌────▼────┐              │
+│    │  Agent  │      │  Agent  │     │  Agent  │  (Go)        │
+│    │ (Win)   │      │ (Linux) │     │ (macOS) │              │
+│    └─────────┘      └─────────┘     └─────────┘              │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+**Server:** TypeScript on Node.js/Bun  
+**Agents:** Go (cross-platform)  
+**Communication:** Encrypted WebSockets + TLS  
+**Storage:** Persistent data, audit logs, agent profiles
+
+---
+
+## 🚀 Quick Start (Docker)
+
+The fastest way to get up and running. Choose your platform:
 
 ### Windows
 
-<details>
-<summary>Step-by-step: Windows</summary>
-<br>
+```powershell
+# 1. Install Docker Desktop
+winget install -e --id Docker.DockerDesktop
 
-**1. Install Docker Desktop**
+# 2. Clone the repository
+git clone https://github.com/dpunk12/Dpunk-RAT.git
+cd Dpunk-RAT
+
+# 3. Start DPUNK RAT
+docker compose -f docker-compose.windows.yml up -d
+
+# 4. Open the panel
+# Visit: https://localhost:5173
+# Default login: admin / admin
+```
+
+<details>
+<summary>📖 Detailed Windows Setup</summary>
+
+**Step 1: Install Docker Desktop**
 
 Either from the website:
-
 - https://docs.docker.com/desktop/setup/install/windows-install/
 
 Or with winget:
@@ -60,26 +108,26 @@ docker --version
 docker compose version
 ```
 
-**2. Get the project**
+**Step 2: Get the project**
 
 ```powershell
-git clone https://github.com/vxaboveground/Overlord.git
-cd Overlord
+git clone https://github.com/dpunk12/Dpunk-RAT.git
+cd Dpunk-RAT
 ```
 
-**3. Start it**
+**Step 3: Start it**
 
 ```powershell
 docker compose -f docker-compose.windows.yml up -d
 ```
 
-**4. Open the panel**
+**Step 4: Open the panel**
 
-```text
+```
 https://localhost:5173
 ```
 
-**5. Update later**
+**Step 5: Update later**
 
 ```powershell
 docker compose -f docker-compose.windows.yml down
@@ -87,7 +135,7 @@ docker compose -f docker-compose.windows.yml pull
 docker compose -f docker-compose.windows.yml up -d
 ```
 
-**6. Stop**
+**Step 6: Stop**
 
 ```powershell
 docker compose -f docker-compose.windows.yml down
@@ -97,27 +145,41 @@ docker compose -f docker-compose.windows.yml down
 
 ---
 
-### Linux
+### Linux (Debian/Ubuntu/Kali)
+
+```bash
+# 1. Install Docker
+sudo apt update && sudo apt install -y docker.io docker-compose
+
+# 2. Enable Docker service
+sudo systemctl start docker
+sudo systemctl enable docker
+
+# 3. Clone and start
+git clone https://github.com/dpunk12/Dpunk-RAT.git
+cd Dpunk-RAT
+docker compose up -d
+
+# 4. Access the panel
+# Visit: https://localhost:5173 or https://<your-ip>:5173
+```
 
 <details>
-<summary>Step-by-step: Linux (Debian / Ubuntu / Kali)</summary>
-<br>
+<summary>📖 Detailed Linux Setup</summary>
 
-**1. Install Docker**
+**Step 1: Install Docker**
 
 Official docs: https://docs.docker.com/engine/install/debian/
 
 Set up Docker's apt repository:
 
 ```bash
-# Add Docker's official GPG key:
 sudo apt update
 sudo apt install ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
 
-# Add the repository to Apt sources:
 sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
 Types: deb
 URIs: https://download.docker.com/linux/debian
@@ -130,57 +192,42 @@ EOF
 sudo apt update
 ```
 
-On a derivative distro (e.g. Kali), replace the codename expansion with the matching Debian codename, e.g. `bookworm`.
-
 Install Docker:
 
 ```bash
 sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
-Make sure the daemon is running:
+Verify:
 
 ```bash
 sudo systemctl status docker
 ```
 
-**2. Grab the compose file**
-
-Make a folder for it, drop in the file, and you're done:
+**Step 2: Get the compose file**
 
 ```bash
-mkdir overlord && cd overlord
-wget https://raw.githubusercontent.com/vxaboveground/Overlord/refs/heads/main/docker-compose.yml
+mkdir dpunk-rat && cd dpunk-rat
+wget https://raw.githubusercontent.com/dpunk12/Dpunk-RAT/refs/heads/main/docker-compose.yml
 ```
 
-No `wget`? Use `curl`:
-
-```bash
-mkdir overlord && cd overlord
-curl -O https://raw.githubusercontent.com/vxaboveground/Overlord/refs/heads/main/docker-compose.yml
-```
-
-**3. Start it**
+**Step 3: Start it**
 
 ```bash
 docker compose up -d
 ```
 
-The image is pulled automatically from `ghcr.io/vxaboveground/overlord:latest` on first run.
+The image is pulled automatically from Docker Hub on first run.
 
-**4. Open the panel**
+**Step 4: Open the panel**
 
-```text
+```
 https://localhost:5173
-
-or 
-
-https://IP:5173
+or
+https://<your-server-ip>:5173
 ```
 
-**5. Update later**
-
-From the same folder:
+**Step 5: Update later**
 
 ```bash
 docker compose down
@@ -188,7 +235,7 @@ docker compose pull
 docker compose up -d
 ```
 
-**6. Stop**
+**Step 6: Stop**
 
 ```bash
 docker compose down
@@ -200,14 +247,24 @@ docker compose down
 
 ### macOS
 
-<details>
-<summary>Step-by-step: macOS</summary>
-<br>
+```bash
+# 1. Install Docker Desktop
+brew install --cask docker
 
-**1. Install Docker Desktop**
+# 2. Clone and start
+git clone https://github.com/dpunk12/Dpunk-RAT.git
+cd Dpunk-RAT
+docker compose -f docker-compose.windows.yml up -d
+
+# 3. Open https://localhost:5173
+```
+
+<details>
+<summary>📖 Detailed macOS Setup</summary>
+
+**Step 1: Install Docker Desktop**
 
 Either from the website:
-
 - https://docs.docker.com/desktop/setup/install/mac-install/
 
 Or with Homebrew:
@@ -223,14 +280,14 @@ docker --version
 docker compose version
 ```
 
-**2. Get the project**
+**Step 2: Get the project**
 
 ```bash
-git clone https://github.com/vxaboveground/Overlord.git
-cd Overlord
+git clone https://github.com/dpunk12/Dpunk-RAT.git
+cd Dpunk-RAT
 ```
 
-**3. Start it**
+**Step 3: Start it**
 
 macOS uses the same compose file as Windows:
 
@@ -238,13 +295,13 @@ macOS uses the same compose file as Windows:
 docker compose -f docker-compose.windows.yml up -d
 ```
 
-**4. Open the panel**
+**Step 4: Open the panel**
 
-```text
+```
 https://localhost:5173
 ```
 
-**5. Update later**
+**Step 5: Update later**
 
 ```bash
 docker compose -f docker-compose.windows.yml down
@@ -252,7 +309,7 @@ docker compose -f docker-compose.windows.yml pull
 docker compose -f docker-compose.windows.yml up -d
 ```
 
-**6. Stop**
+**Step 6: Stop**
 
 ```bash
 docker compose -f docker-compose.windows.yml down
@@ -262,14 +319,13 @@ docker compose -f docker-compose.windows.yml down
 
 ---
 
-## No Docker (.bat / .sh)
+## 🛠️ Manual Setup (No Docker)
 
-If you don't want Docker, use the included scripts.
+If you prefer to run without Docker, use the included scripts.
 
-Prerequisites:
-
-- Bun in PATH
-- Go 1.21+ in PATH
+**Prerequisites:**
+- Bun (https://bun.sh)
+- Go 1.21+ (https://golang.org)
 
 ### Windows
 
@@ -285,7 +341,7 @@ Production mode (build + run server executable):
 start-prod.bat
 ```
 
-Build client binaries (adds client builds to the build queue):
+Build client binaries:
 
 ```bat
 build-clients.bat
@@ -293,19 +349,19 @@ build-clients.bat
 
 ### Linux / macOS
 
-Make scripts executable once:
+Make scripts executable:
 
 ```bash
 chmod +x start-dev.sh start-dev-server.sh start-dev-client.sh start-prod.sh build-prod-package.sh
 ```
 
-Development mode (server in background, client in foreground):
+Development mode:
 
 ```bash
 ./start-dev.sh
 ```
 
-Only server, or only client:
+Only server or only client:
 
 ```bash
 ./start-dev.sh server
@@ -320,11 +376,11 @@ Production mode:
 
 ---
 
-## Production Package Scripts
+## 📦 Production Deployment
 
-Build a production-ready package where the server can still build client binaries at runtime.
+Build a production-ready package:
 
-Windows:
+**Windows:**
 
 ```bat
 build-prod-package.bat
@@ -332,7 +388,7 @@ build-prod-package.bat
 
 Output: `release/`
 
-Linux / macOS:
+**Linux / macOS:**
 
 ```bash
 ./build-prod-package.sh
@@ -342,142 +398,232 @@ Output: `release/prod-package/`
 
 ---
 
-## WebRTC Streaming
+## 🖥️ Desktop Application
 
-The remote desktop viewer has a **Transport** dropdown with three modes:
+DPUNK RAT includes a native desktop client built with **Tauri 2** (Rust + system webview).
 
-- **Canvas** (default): H.264 / JPEG / block frames over the existing WebSocket, decoded into a `<canvas>`. Highest latency, works anywhere the WS does.
-- **WebRTC P2P**: browser ↔ agent direct. The server only relays SDP and ICE candidates over the existing WS — MediaMTX is not involved. Lowest latency. Fails when both sides are behind aggressive symmetric NAT.
-- **WebRTC Relayed**: agent publishes to a MediaMTX sidecar via WHIP, browser plays via WHEP. The server proxies signaling so the existing JWT auth + per-client RBAC still apply. Lowest-effort fallback when P2P can't punch through.
+### Features
 
-### Building agents with WebRTC
+- Native desktop window with operator connection screen
+- Remembers server address across launches
+- TLS toggle for HTTP/HTTPS
+- Accepts self-signed certificates
+- Cross-platform support (Windows, macOS, Linux)
+- ~10 MB installer size
 
-WebRTC is **opt-in per agent build**. In the builder UI, tick the **WebRTC** checkbox before clicking Build. Without it, the Pion stack (~6 MB of Go modules) is not compiled in — any WebRTC start attempt from the operator returns `webrtc support not compiled in` and the viewer falls back to Canvas. The Canvas path always works regardless of the build setting.
+### Building the Desktop App
 
-The build tag (`overlord_webrtc`) is also available if you build agents outside the UI:
+**Prerequisites:**
+- Rust (https://rustup.rs)
+- Bun
+- Platform dependencies (see Tauri docs)
+
+**Quick Start:**
+
+```bash
+cd Overlord-Desktop
+bun install
+bun run start
+```
+
+**Build for Distribution:**
+
+```bash
+bun run build:win      # Windows NSIS installer
+bun run build:mac      # macOS DMG
+bun run build:linux    # Linux AppImage
+```
+
+---
+
+## 🎥 Remote Desktop & Streaming
+
+The remote viewer supports **three transport modes**:
+
+1. **Canvas (Default)** — H.264/JPEG over WebSocket, decoded to `<canvas>`
+   - Works anywhere WebSocket connects
+   - Highest latency but most compatible
+
+2. **WebRTC P2P** — Direct browser ↔ agent connection
+   - Lowest latency
+   - Server relays SDP/ICE candidates only
+   - May fail behind strict NATs
+
+3. **WebRTC Relayed** — Agent → MediaMTX → Browser
+   - Low latency with fallback
+   - Server proxies signaling
+   - Authentication maintained
+
+### Enabling WebRTC for Agents
+
+In the builder UI, check the **WebRTC** checkbox before building. This adds the Pion stack (~6 MB).
+
+Or build with the tag:
 
 ```bash
 go build -tags overlord_webrtc ./cmd/agent
 ```
 
-### MediaMTX sidecar
+---
 
-Compose starts an `overlord-mediamtx` service for Relayed mode. It needs:
+## 🔌 Plugin System
 
-- Port `8189/udp` and `8189/tcp` reachable from operators (WebRTC ICE traffic). The Windows / macOS compose publishes these; Linux uses host networking and shares the host's interfaces directly.
-- No auth config — the Overlord server proxies every WHIP/WHEP request through `/api/webrtc/...` and enforces the existing operator JWT + RBAC there.
+Extend DPUNK RAT with custom Go plugins. See `plugins/sample-go/` for an example.
 
-If you only ever want P2P, you can comment out the `mediamtx:` service in your compose file — only Relayed mode depends on it.
+### Plugin Files
 
-### LAN / public access
+At the root of the plugin zip:
+- `plugin-name-linux-amd64.so`
+- `plugin-name-darwin-arm64.dylib`
+- `plugin-name-windows-amd64.dll`
+- `plugin-name.html` (UI)
+- `plugin-name.css` (Styling)
+- `plugin-name.js` (Frontend logic)
 
-By default MediaMTX advertises `127.0.0.1` as an ICE candidate, which is enough for operators running their browser on the same machine as Docker.
+### Building a Plugin
 
-For viewers on a different machine:
+```bash
+cd plugins/sample-go
+./build-plugin.sh
 
-- **Linux** (host networking): nothing to configure — MediaMTX sees the host's eth0/wlan0 and gathers those candidates automatically.
-- **Windows / macOS** (bridge networking): set `OVERLORD_WEBRTC_ADDITIONAL_HOSTS` to a comma-separated list including the server's reachable LAN or public IP. Either export it in your shell, or add it to a `.env` file next to the compose file:
+# Multiple targets
+BUILD_TARGETS="linux-amd64 linux-arm64 darwin-arm64" ./build-plugin.sh
 
-  ```
-  OVERLORD_WEBRTC_ADDITIONAL_HOSTS=127.0.0.1,192.168.1.42
-  ```
+# Windows
+build-plugin.bat
+```
 
-  Then `docker compose -f docker-compose.windows.yml up -d mediamtx` to apply.
+The script automatically creates a zip file. Place it in `Overlord-Server/plugins`.
 
-### Advanced MediaMTX customization
+### Using Your Plugin
 
-The compose file passes a minimal set of `MTX_*` environment variables to MediaMTX — enough for Overlord to work. To change anything else (codecs, paths, ICE servers, etc.), either:
-
-- Add more `MTX_*` variables to the `mediamtx` service's `environment:` block (every option in MediaMTX's docs is supported as an env var), or
-- Provide a full `mediamtx.yml` via a bind mount:
-
-  ```yaml
-  mediamtx:
-    # ...existing config...
-    volumes:
-      - ./mediamtx.yml:/mediamtx.yml:ro
-  ```
-
-  Make sure the file exists on the host *before* the container starts — Docker will otherwise auto-create an empty directory at that path and fail with "not a directory".
+Navigate to: `/plugins/sample?clientId=<CLIENT_ID>`
 
 ---
 
-## Docker Notes (TLS, reverse proxy, cache)
+## ⚙️ Configuration
 
-Notes on configs and workarounds.
+### Default Credentials
 
-### BuildKit cache for faster rebuilds
+On first start:
+- **Username:** `admin`
+- **Password:** `admin`
 
-`docker-compose.yml` ships with `build.cache_from` and `build.cache_to` pointing at `.docker-cache/buildx`. Local builds reuse it automatically — no extra setup.
-
-### Runtime client build cache
-
-The compose setup uses a persistent volume for runtime client builds:
-
-- Volume: `overlord-client-build-cache`
-- Mount: `/app/client-build-cache`
-- Env: `OVERLORD_CLIENT_BUILD_CACHE_DIR` (default `/app/client-build-cache`)
-
-### Certbot TLS
-
-To use Let's Encrypt certificates in production Docker:
-
-1. Set `OVERLORD_TLS_CERTBOT_ENABLED=true`
-2. Set `OVERLORD_TLS_CERTBOT_DOMAIN=your-domain.com`
-3. Mount letsencrypt into the container read-only, e.g. `/etc/letsencrypt:/etc/letsencrypt:ro`
-
-Default cert paths:
-
+Override with environment variables:
 ```
-cert: /etc/letsencrypt/live/<domain>/fullchain.pem
-key:  /etc/letsencrypt/live/<domain>/privkey.pem
-ca:   /etc/letsencrypt/live/<domain>/chain.pem
+OVERLORD_USER=myuser
+OVERLORD_PASS=mypassword
 ```
 
-Override with:
+### Port Configuration
 
-- `OVERLORD_TLS_CERTBOT_LIVE_PATH`
-- `OVERLORD_TLS_CERTBOT_CERT_FILE`
-- `OVERLORD_TLS_CERTBOT_KEY_FILE`
-- `OVERLORD_TLS_CERTBOT_CA_FILE`
+Default: **5173** (HTTPS)
 
-### Reverse proxy TLS offload
+Change with:
+```
+PORT=8443
+```
 
-If your platform terminates TLS before traffic reaches Overlord (Render, Caddy, nginx, etc.), set:
+### TLS / HTTPS
+
+DPUNK RAT auto-generates self-signed certificates on first start. For production with Let's Encrypt:
+
+```
+OVERLORD_TLS_CERTBOT_ENABLED=true
+OVERLORD_TLS_CERTBOT_DOMAIN=your-domain.com
+```
+
+---
+
+## 🌐 Advanced Networking
+
+### Reverse Proxy / TLS Offload
+
+If your platform terminates TLS before reaching DPUNK RAT (Render, Caddy, nginx, etc.):
 
 ```
 OVERLORD_TLS_OFFLOAD=true
 OVERLORD_HEALTHCHECK_URL=http://localhost:5173/health
 OVERLORD_PUBLISH_HOST=127.0.0.1
+OVERLORD_TRUST_PROXY=true
 ```
 
-When enabled:
+### WebRTC Additional Hosts
 
-- Container serves internal HTTP on `0.0.0.0:$PORT`
-- External URL stays `https://...` through your platform proxy
-- Health checks should use `http://localhost:$PORT/health` inside the container
-- Don't expose the internal container HTTP port directly to the internet
+For operators on different machines:
 
-### Source IP behind a domain / reverse proxy
+```bash
+OVERLORD_WEBRTC_ADDITIONAL_HOSTS=127.0.0.1,192.168.1.42
+docker compose -f docker-compose.windows.yml up -d mediamtx
+```
 
-If the dashboard, audit log, or IP bans show all agents as `172.x.x.x` (or some other proxy/bridge IP), something between the agent and Bun is rewriting the source IP. Two independent flags govern this:
+---
 
-- `OVERLORD_TLS_OFFLOAD` — TLS terminates at the proxy; Overlord runs plain HTTP internally.
-- `OVERLORD_TRUST_PROXY` — honor `X-Forwarded-For` / `X-Real-IP` / `CF-Connecting-IP` so dashboard/audit/IP-bans see the real client. Auto-enabled when `TLS_OFFLOAD=true`.
+## 📊 Dashboard Highlights
 
-Common shapes:
+- **Real-Time Metrics** — CPU, memory, disk, network for each agent
+- **Command Execution** — Run PowerShell, Bash, or custom scripts
+- **File Management** — Upload, download, and browse agent file systems
+- **Process Management** — View, kill, or manipulate processes
+- **Audio Capture** — Stream live audio from target systems
+- **Screen Capture** — High-fidelity remote desktop with low latency
+- **Log Viewer** — Persistent audit logs and event history
 
-| Setup | `TLS_OFFLOAD` | `TRUST_PROXY` |
-|---|---|---|
-| Domain, no proxy (Linux host networking; certbot inside Overlord; Cloudflare DNS-only) | `false` | `false` |
-| Domain, proxy does TLS (Render, nginx terminating TLS → http upstream) | `true` | auto (`true`) |
-| Domain, proxy in front but Overlord still does TLS (Cloudflare orange-cloud Full Strict; nginx with `proxy_pass https://`) | `false` | `true` |
+---
 
-Only enable `OVERLORD_TRUST_PROXY` when a trusted reverse proxy is in front. If Overlord is directly exposed and you enable it, agents can spoof their source IP by sending their own `X-Forwarded-For` header, breaking IP bans and audit accuracy. The upstream proxy also has to be configured to inject the header (Cloudflare does by default; nginx/Caddy/Traefik need explicit directives).
+## 📚 Documentation Structure
 
-If you're using `docker-compose.windows.yml` or `docker-compose.quickstart.yml` (Docker Desktop bridge networking) with **no** reverse proxy, Docker itself rewrites source IPs to the bridge gateway and there is no header to recover from — `TRUST_PROXY` cannot help. Either switch to Linux host networking or put a real reverse proxy in front.
+- **README.md** — This file (overview + quick start)
+- **Overlord-Server/** — Backend server (TypeScript/Bun)
+- **Overlord-Desktop/** — Native desktop client (Tauri 2)
+- **client-agent/** — Go agent (Windows/Linux/macOS)
+- **plugins/** — Custom plugin examples and templates
+- **.github/workflows/** — CI/CD pipelines
 
-### Notes
+---
 
-- Keep `HOST=0.0.0.0` inside the container. Limit exposure with `OVERLORD_PUBLISH_HOST`, not the bind host.
-- If your `.env` secret/password contains `$`, escape it as `$$` to avoid Docker Compose variable-expansion warnings.
+## 🔗 Useful Links
+
+- **Docker Docs:** https://docs.docker.com
+- **Bun:** https://bun.sh
+- **Go:** https://golang.org
+- **Tauri:** https://tauri.app
+- **Node.js:** https://nodejs.org
+
+---
+
+## ⚠️ Legal & Disclaimer
+
+DPUNK RAT is provided **for authorized security testing and enterprise operations only**. Unauthorized access to computer systems is illegal. Users are solely responsible for complying with all applicable laws and regulations.
+
+This tool is designed for:
+- ✅ Security professionals and penetration testers
+- ✅ IT administrators managing authorized systems
+- ✅ Enterprise infrastructure monitoring
+- ✅ Educational purposes in controlled environments
+
+Misuse is prohibited and may result in legal consequences.
+
+---
+
+## 🤝 Support & Community
+
+- **Issues:** Report bugs and feature requests on GitHub
+- **Discussions:** Community support and best practices
+- **Pull Requests:** Contributions welcome (fork + PR)
+
+---
+
+## 📄 License
+
+Licensed under **Apache 2.0**. See `LICENSE` for details.
+
+---
+
+<div align="center">
+
+**⚡ DPUNK RAT — Enterprise Remote Administration, Reimagined ⚡**
+
+*Built for security professionals. Tested in the field.*
+
+</div>
